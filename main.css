@@ -1,0 +1,56 @@
+body {
+  background-color: #f0f8ff;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+.img-container {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.img-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.img-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* ------------------------------
+   Responsive layout
+------------------------------- */
+
+/* >1200px: 4 ảnh 1 hàng */
+@media (min-width: 1200px) {
+  .gallery .col {
+    flex: 0 0 25%;   /* 100% / 4 */
+    max-width: 25%;
+  }
+}
+
+/* 900px - 1199px: 3 ảnh 1 hàng */
+@media (min-width: 900px) and (max-width: 1199px) {
+  .gallery .col {
+    flex: 0 0 33.33%;   /* 100% / 3 */
+    max-width: 33.33%;
+  }
+}
+
+/* <900px: 2 ảnh 1 hàng */
+@media (max-width: 899px) {
+  .gallery .col {
+    flex: 0 0 50%;   /* 100% / 2 */
+    max-width: 50%;
+  }
+}
